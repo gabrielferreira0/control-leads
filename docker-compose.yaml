@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  gabriel-api:
+    image: nginx:1.21.3
+    container_name: gabriel-api-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www
+      - ./docker/nginx.default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - gabrielnetwork
+    depends_on:
+      - php
+      # - banco-gabriel
+  php:
+    build:  .
+    container_name: gabriel-api-php
+    # environment:
+    #     - DB_CONNECTION=pgsql
+    #     - DATABASE_URL=pgsql://gabriel:gabriel@123@banco-gabriel/public
+    volumes:
+      - .:/var/www
+    ports:
+      - "9000:9000"
+    networks:
+      - gabrielnetwork
+    # depends_on:
+    #     - banco-gabriel
+  # banco-gabriel:
+  #   image: postgres:13
+  #   container_name: banco-gabriel
+  #   restart: always
+  #   environment:
+  #     - POSTGRES_PASSWORD=gabriel@123
+  #     - POSTGRES_USER=gabriel
+  #     - POSTGRES_DB=public
+  #   volumes:
+  #     - ./docker/banco:/var/lib/postgresql/data
+  #   ports:
+  #     - "5439:5432"
+  #   networks:
+  #     - gabrielnetwork
+
+networks:
+   gabrielnetwork:
+     name: gabrielnetwork
