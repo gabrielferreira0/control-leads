@@ -46,7 +46,7 @@ ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN composer install
 
 RUN php artisan key:generate
-RUN php artisan make:auth
+
 RUN usermod -u 1000 www-data
 #RUN chown -R www-data:www-data /var/www
 
