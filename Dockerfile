@@ -34,6 +34,8 @@ RUN apt-get update \
 
 WORKDIR /var/www
 
+ADD ./docker/nginx-site-ssl.conf /etc/nginx/sites-available/default-ssl.conf
+
 RUN  curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 COPY ./ /var/www/
