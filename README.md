@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-#Project created with intention for docker / devops studies
+# Project created with intention for docker / devops studies
 
 ## Development environment
 
