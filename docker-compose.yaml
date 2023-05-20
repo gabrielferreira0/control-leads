@@ -15,15 +15,15 @@ services:
       - php
       # - banco-gabriel
   php:
-    build:  .
+    build: .
     container_name: gabriel-api-php
     # environment:
     #     - DB_CONNECTION=pgsql
     #     - DATABASE_URL=pgsql://gabriel:gabriel@123@banco-gabriel/public
     volumes:
       - .:/var/www
-    # ports:
-    #   - "9000:9000"
+    ports:
+      - "9000:9000"
     networks:
       - gabrielnetwork
     # depends_on:
@@ -46,3 +46,4 @@ services:
 networks:
    gabrielnetwork:
      name: gabrielnetwork
+     external: true

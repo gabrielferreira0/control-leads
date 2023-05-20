@@ -39,6 +39,10 @@ RUN  curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/loca
 COPY ./ /var/www/
 COPY .env.example .env
 COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+ENV COMPOSER_ALLOW_SUPERUSER=1
+
+
 RUN composer install
 
 RUN php artisan key:generate
