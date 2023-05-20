@@ -22,8 +22,8 @@ services:
     #     - DATABASE_URL=pgsql://gabriel:gabriel@123@banco-gabriel/public
     volumes:
       - .:/var/www
-    ports:
-      - "9000:9000"
+    # ports:
+    #   - "9000:9000"
     networks:
       - gabrielnetwork
     # depends_on:
