@@ -36,7 +36,7 @@ WORKDIR /var/www
 
 RUN  curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-COPY ./ /var/www/
+COPY . .
 COPY .env.example .env
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
