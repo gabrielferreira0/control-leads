@@ -24,8 +24,5 @@ docker compose up --build -d
 
 ## Production environment
 
-### URL to access : https://control-leads-laravel.onrender.com/
+### URL to access : https://control-leads.fly.dev/
 
-### Cloud : https://render.com/
-
-### Docker Image: https://github.com/richarvey/nginx-php-fpm
