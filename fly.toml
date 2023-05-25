@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for control-leads-gabiru on 2023-05-23T19:53:04-03:00
+# fly.toml app configuration file generated for control-leads-gabiruts on 2023-05-25T20:22:45-03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "control-leads-gabiru"
+app = "control-leads-gabiruts"
 primary_region = "gru"
 
 [build]
@@ -16,6 +16,7 @@ primary_region = "gru"
   LOG_CHANNEL = "stderr"
   LOG_LEVEL = "info"
   LOG_STDERR_FORMATTER = "Monolog\\Formatter\\JsonFormatter"
+  
 
 [http_service]
   internal_port = 8080
