@@ -24,5 +24,5 @@ docker compose up --build -d
 
 ## Production environment
 
-### URL to access : https://control-leads-gabiru.fly.dev/
+### URL to access : https://control-leads-gabiruts.fly.dev/
 
